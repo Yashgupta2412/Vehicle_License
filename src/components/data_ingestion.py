@@ -3,6 +3,7 @@ import sys
 
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
+from streamlit import dataframe
 
 from src.entity.config_entity import DataIngestionConfig
 from src.entity.artifact_entity import DataIngestionArtifact
@@ -56,6 +57,8 @@ class DataIngestion:
         logging.info("Entered split_data_as_train_test method of Data_Ingestion class")
 
         try:
+            logging.info(f"Dataframe shape: {dataframe.shape}")
+            logging.info(f"Dataframe head:\n{dataframe.head()}")
             train_set, test_set = train_test_split(dataframe, test_size=self.data_ingestion_config.train_test_split_ratio)
             logging.info("Performed train test split on the dataframe")
             logging.info(
