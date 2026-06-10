@@ -2,3 +2,4 @@ requirements.txt
 .env
 logs
 artifact
+projectflow.txt
